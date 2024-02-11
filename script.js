@@ -121,7 +121,17 @@ function generateCV(){
     } 
     
     //print cv
-    function printCV(){
-        window.print();
-    }
+  function printCV() {
+    // Remove button text temporarily
+    var printButton = document.querySelector("#cv-template .container.text-center button");
+    var buttonText = printButton.textContent;
+    printButton.textContent = "";
+
+    // Print the CV
+    window.print();
+
+    // Restore button text
+    printButton.textContent = buttonText;
+}
+
     
